@@ -70,9 +70,9 @@ const ui = {
 
     const pensamentoData = document.createElement("div")
     const dataFormatada = pensamento.data.toLocaleDateString("pt-BR", options)
-    pensamentoData.textContent = dataFormatada
+    const dataComRegex = dataFormatada.replace(/^(\w)/, (match) => match.toUpperCase())
+    pensamentoData.textContent = dataComRegex
     pensamentoData.classList.add("pensamento-data")
-
     const botaoEditar = document.createElement("button")
     botaoEditar.classList.add("botao-editar")
     botaoEditar.onclick = () => ui.preencherFormulario(pensamento.id)
